@@ -90,7 +90,7 @@
     { "tag": "📲 Telegram", "type": "selector", "outbounds": ["🚀 节点选择", "all-auto", "hk", "tw", "jp", "sg", "us", "all"] },
     { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "hk", "tw", "jp", "sg", "us"] },
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择","🎯 全球直连"] },
-    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "GLOBAL", "type": "selector", "outbounds": ["all"]},
     { "tag": "🎯 全球直连", "type": "direct" },
     { "tag": "dns-out", "type": "dns" }
   ],
