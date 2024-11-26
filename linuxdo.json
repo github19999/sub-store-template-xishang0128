@@ -127,14 +127,14 @@
         "tag": "cnip",
         "format": "binary",
         "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.srs",
-        "download_detour": "all-auto"
+        "download_detour": "direct-out"
       },
       {
         "type": "remote",
         "tag": "cnsite",
         "format": "binary",
         "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.srs",
-        "download_detour": "all-auto"
+        "download_detour": "direct-out"
       }
     ],
     "auto_detect_interface": true,
