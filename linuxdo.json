@@ -8,7 +8,7 @@
     "servers": [
       {
         "tag": "default-dns",
-        "address": [ "223.5.5.5", "119.29.29.29", "[2400:3200::1]", "[2402:4e00::]" ],
+        "address": "223.5.5.5",
         "detour": "direct-out"
       },
       {
@@ -89,7 +89,7 @@
     { "type": "direct", "tag": "direct-out", "routing_mark": 100 },
     { "type": "block",  "tag": "block-out" },
     { "type": "dns",    "tag": "dns-out"   },
-    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ] }
+    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ], "default": "proxy" }
   ],
   "route": {
     "rules": [
@@ -126,14 +126,14 @@
         "type": "remote",
         "tag": "cnip",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.srs",
         "download_detour": "all-auto"
       },
       {
         "type": "remote",
         "tag": "cnsite",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.srs",
         "download_detour": "all-auto"
       }
     ],
