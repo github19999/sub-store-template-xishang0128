@@ -81,7 +81,7 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "tag": "dns_out",
+        "tag": "dns-out",
         "type": "dns"
       },
       {
@@ -103,7 +103,7 @@
         ]
       },
       {
-        "outbound": "dns_out",
+        "outbound": "dns-out",
         "port": [
           53
         ],
