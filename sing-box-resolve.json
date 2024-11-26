@@ -480,7 +480,7 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "outbound": "dns_out",
+        "outbound": "dns-out",
         "protocol": "dns"
       },
       {
@@ -502,7 +502,7 @@
         ]
       },
       {
-        "outbound": "dns_out",
+        "outbound": "dns-out",
         "port": 53,
         "process_name": [
           "wv2ray.exe",
