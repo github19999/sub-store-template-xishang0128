@@ -89,7 +89,7 @@
     { "type": "direct", "tag": "direct-out", "routing_mark": 100 },
     { "type": "block",  "tag": "block-out" },
     { "type": "dns",    "tag": "dns-out"   },
-    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ], "default": "all" }
+    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ] }
   ],
   "route": {
     "rules": [
