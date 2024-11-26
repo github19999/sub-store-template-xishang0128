@@ -81,7 +81,7 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "outbound": "dns-out",
+        "outbound": "dns_out",
         "protocol": [
           "dns"
         ]
@@ -105,7 +105,7 @@
         ]
       },
       {
-        "outbound": "dns-out",
+        "outbound": "dns_out",
         "port": [
           53
         ],
