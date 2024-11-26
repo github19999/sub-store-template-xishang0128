@@ -128,13 +128,6 @@
         "format": "binary",
         "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.srs",
         "download_detour": "all-auto"
-      },
-      {
-        "type": "remote",
-        "tag": "cnsite",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.srs",
-        "download_detour": "all-auto"
       }
     ],
     "auto_detect_interface": true,
