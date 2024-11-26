@@ -1,0 +1,154 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "default-dns",
+        "address": "223.5.5.5",
+        "detour": "direct-out"
+      },
+      {
+        "tag": "system-dns",
+        "address": "local",
+        "detour": "direct-out"
+      },
+      {
+        "tag": "block-dns",
+        "address": "rcode://name_error"
+      },
+      {
+        "tag": "google",
+        "address": "https://dns.google/dns-query",
+        "address_resolver": "default-dns",
+        "address_strategy": "ipv4_only",
+        "strategy": "ipv4_only",
+        "client_subnet": "1.0.1.0"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "default-dns"
+      },
+      {
+        "query_type": "HTTPS",
+        "server": "block-dns"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "default-dns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "google"
+      },
+      {
+        "rule_set": "cnsite",
+        "server": "default-dns"
+      }
+    ],
+    "strategy": "ipv4_only",
+    "disable_cache": false,
+    "disable_expire": false,
+    "independent_cache": false,
+    "final": "google"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "fd00::1/126",
+      "mtu": 9000,
+      "gso": true,
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": true,
+      "sniff_override_destination": false
+    }
+  ],
+  "outbounds": [
+    { "tag": "proxy", "type": "selector", "outbounds": ["all", "all-auto", "hk", "tw", "jp", "sg", "us", "all-auto", "hk-auto", "tw-auto", "jp-auto", "sg-auto", "us-auto" ] },
+    { "tag": "all", "type": "selector", "outbounds": [] },
+    { "tag": "all-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },	    
+    { "tag": "hk", "type": "selector", "outbounds": [] },	
+    { "tag": "tw", "type": "selector", "outbounds": [] },	
+    { "tag": "jp", "type": "selector", "outbounds": [] },	
+    { "tag": "sg", "type": "selector", "outbounds": [] },	
+    { "tag": "us", "type": "selector", "outbounds": [] },	
+    { "tag": "hk-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
+    { "tag": "tw-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
+    { "tag": "jp-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
+    { "tag": "sg-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
+    { "tag": "us-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
+    { "type": "direct", "tag": "direct-out", "routing_mark": 100 },
+    { "type": "block",  "tag": "block-out" },
+    { "type": "dns",    "tag": "dns-out"   },
+    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ], "default": "proxy" }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "protocol": "quic",
+        "outbound": "block-out"
+      },
+      {
+        "clash_mode": "block",
+        "outbound": "block-out"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct-out"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "rule_set": [
+          "cnip",
+          "cnsite"
+        ],
+        "outbound": "direct-out"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "cnip",
+        "format": "binary",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.srs",
+        "download_detour": "all-auto"
+      },
+      {
+        "type": "remote",
+        "tag": "cnsite",
+        "format": "binary",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.srs",
+        "download_detour": "all-auto"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "proxy"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui_download_detour": "all-auto",
+      "default_mode": "rule"
+    }
+  }
+}
