@@ -89,7 +89,7 @@
     { "type": "direct", "tag": "direct-out", "routing_mark": 100 },
     { "type": "block",  "tag": "block-out" },
     { "type": "dns",    "tag": "dns-out"   },
-    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ] }
+    { "type": "selector", "tag": "GLOBAL", "outbounds": [ "direct-out", "hk", "tw", "jp", "sg", "us" ], "default": "proxy" }
   ],
   "route": {
     "rules": [
@@ -127,6 +127,13 @@
         "tag": "cnip",
         "format": "binary",
         "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/cn.srs",
+        "download_detour": "all-auto"
+      },
+      {
+        "type": "remote",
+        "tag": "cnsite",
+        "format": "binary",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/cn.srs",
         "download_detour": "all-auto"
       }
     ],
