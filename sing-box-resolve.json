@@ -63,26 +63,425 @@
     }
   ],
   "outbounds": [
-    { "tag": "proxy", "type": "selector", "outbounds": ["all", "all-auto", "hk", "tw", "jp", "sg", "us", "all-auto", "hk-auto", "tw-auto", "jp-auto", "sg-auto", "us-auto" ] },
-    { "tag": "all", "type": "selector", "outbounds": [] },
-    { "tag": "all-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },	    
-    { "tag": "hk", "type": "selector", "outbounds": [] },	
-    { "tag": "tw", "type": "selector", "outbounds": [] },	
-    { "tag": "jp", "type": "selector", "outbounds": [] },	
-    { "tag": "sg", "type": "selector", "outbounds": [] },	
-    { "tag": "us", "type": "selector", "outbounds": [] },	
-    { "tag": "hk-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
-    { "tag": "tw-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
-    { "tag": "jp-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
-    { "tag": "sg-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
-    { "tag": "us-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 }
+    {
+      "tag": "proxy",
+      "type": "selector",
+      "outbounds": [
+        "all",
+        "all-auto",
+        "hk",
+        "tw",
+        "jp",
+        "sg",
+        "us",
+        "all-auto",
+        "hk-auto",
+        "tw-auto",
+        "jp-auto",
+        "sg-auto",
+        "us-auto"
+      ]
+    },
+    {
+      "tag": "all",
+      "type": "selector",
+      "outbounds": [
+        "27d35b96-VLESS_TCP/TLS_Vision",
+        "27d35b96-VLESS_WS",
+        "27d35b96-VMess_WS",
+        "27d35b96-Trojan_TCP_Trojan",
+        "27d35b96-singbox_hysteria2",
+        "27d35b96-VLESS_Reality_Vision",
+        "27d35b96-VLESS_Reality_gPRC",
+        "27d35b96-singbox_tuic",
+        "27d35b96-VMess_HTTPUpgrade",
+        "ccs-uif-hy2",
+        "ccs-uif-tuic",
+        "ccs-uif-trojan_tcp_tls",
+        "ccs-uif-VMess_WS_TLS",
+        "ccs-uif-VMess_HTTPUpgrade_TLS",
+        "ccs-uif-VLESS_TCP_TLS_Vision"
+      ]
+    },
+    {
+      "tag": "all-auto",
+      "type": "urltest",
+      "outbounds": [
+        "27d35b96-VLESS_TCP/TLS_Vision",
+        "27d35b96-VLESS_WS",
+        "27d35b96-VMess_WS",
+        "27d35b96-Trojan_TCP_Trojan",
+        "27d35b96-singbox_hysteria2",
+        "27d35b96-VLESS_Reality_Vision",
+        "27d35b96-VLESS_Reality_gPRC",
+        "27d35b96-singbox_tuic",
+        "27d35b96-VMess_HTTPUpgrade",
+        "ccs-uif-hy2",
+        "ccs-uif-tuic",
+        "ccs-uif-trojan_tcp_tls",
+        "ccs-uif-VMess_WS_TLS",
+        "ccs-uif-VMess_HTTPUpgrade_TLS",
+        "ccs-uif-VLESS_TCP_TLS_Vision"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "hk",
+      "type": "selector",
+      "outbounds": [
+        "COMPATIBLE"
+      ]
+    },
+    {
+      "tag": "tw",
+      "type": "selector",
+      "outbounds": [
+        "COMPATIBLE"
+      ]
+    },
+    {
+      "tag": "jp",
+      "type": "selector",
+      "outbounds": [
+        "COMPATIBLE"
+      ]
+    },
+    {
+      "tag": "sg",
+      "type": "selector",
+      "outbounds": [
+        "COMPATIBLE"
+      ]
+    },
+    {
+      "tag": "us",
+      "type": "selector",
+      "outbounds": [
+        "COMPATIBLE"
+      ]
+    },
+    {
+      "tag": "hk-auto",
+      "type": "urltest",
+      "outbounds": [
+        "COMPATIBLE"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "tw-auto",
+      "type": "urltest",
+      "outbounds": [
+        "COMPATIBLE"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "jp-auto",
+      "type": "urltest",
+      "outbounds": [
+        "COMPATIBLE"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "sg-auto",
+      "type": "urltest",
+      "outbounds": [
+        "COMPATIBLE"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "us-auto",
+      "type": "urltest",
+      "outbounds": [
+        "COMPATIBLE"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 50
+    },
+    {
+      "tag": "27d35b96-VLESS_TCP/TLS_Vision",
+      "type": "vless",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 37844,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "27d35b96-VLESS_WS",
+      "type": "vless",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 23355,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ccs.bibilong.nyc.mn"
+        },
+        "path": "/bhjrws"
+      }
+    },
+    {
+      "tag": "27d35b96-VMess_WS",
+      "type": "vmess",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 11339,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ccs.bibilong.nyc.mn"
+        },
+        "path": "/trek"
+      }
+    },
+    {
+      "tag": "27d35b96-Trojan_TCP_Trojan",
+      "type": "trojan",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 26355,
+      "password": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false
+      }
+    },
+    {
+      "tag": "27d35b96-singbox_hysteria2",
+      "type": "hysteria2",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 10706,
+      "password": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false
+      }
+    },
+    {
+      "tag": "27d35b96-VLESS_Reality_Vision",
+      "type": "vless",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 40239,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "1pNjSXaPQKHe8AXDYl3jyfQkZ-oZFHewFbi1L240BUc",
+          "short_id": "6ba85179e30d4fc2"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "27d35b96-VLESS_Reality_gPRC",
+      "type": "vless",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 31882,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "1pNjSXaPQKHe8AXDYl3jyfQkZ-oZFHewFbi1L240BUc",
+          "short_id": "6ba85179e30d4fc2"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      }
+    },
+    {
+      "tag": "27d35b96-singbox_tuic",
+      "type": "tuic",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 27694,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "password": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false,
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "tag": "27d35b96-VMess_HTTPUpgrade",
+      "type": "vmess",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 28417,
+      "uuid": "27d35b96-8967-4dfd-8fa6-21d502500499",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false
+      },
+      "transport": {
+        "type": "httpupgrade",
+        "headers": {},
+        "path": "/rxom",
+        "host": "ccs.bibilong.nyc.mn"
+      }
+    },
+    {
+      "tag": "ccs-uif-hy2",
+      "type": "hysteria2",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 32996,
+      "password": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "tls": {
+        "enabled": true,
+        "server_name": "SHpy9CUS9A81F8l1.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "ccs-uif-tuic",
+      "type": "tuic",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 17032,
+      "uuid": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "password": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "tls": {
+        "enabled": true,
+        "server_name": "SHpy9CUS9A81F8l1.com",
+        "insecure": false,
+        "alpn": [
+          "h3"
+        ]
+      }
+    },
+    {
+      "tag": "ccs-uif-trojan_tcp_tls",
+      "type": "trojan",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 12075,
+      "password": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "tls": {
+        "enabled": true,
+        "server_name": "SHpy9CUS9A81F8l1.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "ccs-uif-VMess_WS_TLS",
+      "type": "vmess",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 18287,
+      "uuid": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/369463f3"
+      }
+    },
+    {
+      "tag": "ccs-uif-VMess_HTTPUpgrade_TLS",
+      "type": "vmess",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 25476,
+      "uuid": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "ccs.bibilong.nyc.mn",
+        "insecure": false
+      },
+      "transport": {
+        "type": "httpupgrade",
+        "headers": {},
+        "path": "/369463f3"
+      }
+    },
+    {
+      "tag": "ccs-uif-VLESS_TCP_TLS_Vision",
+      "type": "vless",
+      "server": "ccs.bibilong.nyc.mn",
+      "server_port": 35737,
+      "uuid": "369463f3-0d02-41c3-b031-324fe2bc138a",
+      "tls": {
+        "enabled": true,
+        "server_name": "SHpy9CUS9A81F8l1.com",
+        "insecure": true
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "COMPATIBLE",
+      "type": "direct"
+    }
   ],
   "route": {
     "auto_detect_interface": true,
     "rules": [
       {
-        "tag": "dns-out",
-        "type": "dns"
+        "outbound": "dns_out",
+        "protocol": "dns"
       },
       {
         "outbound": "block",
@@ -103,10 +502,8 @@
         ]
       },
       {
-        "outbound": "dns-out",
-        "port": [
-          53
-        ],
+        "outbound": "dns_out",
+        "port": 53,
         "process_name": [
           "wv2ray.exe",
           "v2ray.exe",
