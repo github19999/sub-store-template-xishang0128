@@ -6,17 +6,11 @@
   },
   
   "experimental": {
+    "cache_file": { "enabled": true },
     "clash_api": {
-      "external_controller": "0.0.0.0:9095",
-      "external_ui": "/etc/sing-box/ui",
+      "external_controller": "127.0.0.1:9090",
       "secret": "",
-      "external_ui_download_url": "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "🎯 全球直连",
-      "default_mode": "rule"
-    },
-  "cache_file": {
-    "enabled": true,
-    "store_fakeip": false
+      "default_mode": "Rule"
     }
   },
   
@@ -97,6 +91,8 @@
   
   "route": {
         "auto_detect_interface": true,
+        "override_android_vpn": true,
+        "concurrent_dial": true,
         "final": "🐠 漏网之鱼",
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
