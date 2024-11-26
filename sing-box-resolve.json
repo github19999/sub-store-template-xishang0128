@@ -81,10 +81,8 @@
     "auto_detect_interface": true,
     "rules": [
       {
-        "outbound": "dns_out",
-        "protocol": [
-          "dns"
-        ]
+        "tag": "dns_out",
+        "type": "dns"
       },
       {
         "outbound": "block",
