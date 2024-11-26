@@ -29,7 +29,7 @@
     { "tag": "tun-in", "type": "tun", "interface_name": "tun0", "stack": "mixed", "inet4_address": [ "172.19.0.1/30" ], "inet6_address": [ "fdfe:dcba:9876::1/126" ], "auto_route": true, "strict_route": true, "sniff": true, "platform": { "http_proxy": { "enabled": false, "server": "127.0.0.1", "server_port": 1082 } } }, { "type": "mixed", "listen": "127.0.0.1", "listen_port": 1082, "sniff": true, "users": [] }
   ],
   "outbounds": [
-    { "tag": "🔰 节点选择", "type": "selector", "outbounds": [ "all", "all-auto", "hk", "tw", "jp", "kr", "sg", "us", "hk-auto", "tw-auto", "jp-auto", "kr-auto", "sg-auto", "us-auto", "🌀 手动切换", "🎯 全球直连" ], "default": "all-auto" },
+    { "tag": "🔰 节点选择", "type": "selector", "outbounds": [ "all", "all-auto", "hk", "tw", "jp", "kr", "sg", "us", "hk-auto", "tw-auto", "jp-auto", "kr-auto", "sg-auto", "us-auto", "🎯 全球直连" ], "default": "all-auto" },
     { "tag": "all", "type": "selector", "outbounds": [] },	     
     { "tag": "all-auto", "type": "urltest", "outbounds": [] ,"url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50 },
     { "tag": "hk", "type": "selector", "outbounds": [] },	
