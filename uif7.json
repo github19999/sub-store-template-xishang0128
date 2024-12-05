@@ -125,7 +125,6 @@
     {
       "type": "selector",
       "tag": "proxy",
-      "interrupt_exist_connections": true,
       "outbounds": [
         "自动选择"
       ],
