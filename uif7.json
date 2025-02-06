@@ -126,13 +126,13 @@
       "type": "selector",
       "tag": "proxy",
       "outbounds": [
-        "all"
+        "自动选择"
       ],
-      "default": "all"
+      "default": "自动选择"
     },
     {
       "type": "selector",
-      "tag": "all",
+      "tag": "自动选择",
       "outbounds": [
         
       ]
@@ -173,7 +173,7 @@
       "type": "urltest",
       "tag": "autoSelete",
       "outbounds": [
-        "all"
+        "自动选择"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m",
