@@ -141,7 +141,7 @@
       "type": "selector",
       "tag": "Rules::CN",
       "outbounds": [
-        "all",
+        "proxy",
         "freedom",
         "block"
       ],
@@ -151,7 +151,7 @@
       "type": "selector",
       "tag": "Rules::!CN",
       "outbounds": [
-        "all",
+        "proxy",
         "freedom",
         "block"
       ],
