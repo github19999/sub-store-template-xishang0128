@@ -11,7 +11,7 @@
       "store_fakeip": true
     },
     "clash_api": {
-      "default_mode": "国内直连,国外代理",
+      "default_mode": "全部代理",
       "external_controller": "127.0.0.1:9191",
       "secret": ""
     }
