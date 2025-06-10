@@ -11,7 +11,7 @@
         "tag": "ali",
         "type": "https",
         "server": "223.5.5.5",
-        "detour": "dns-direct"
+        "detour": "direct"
       },
       {
         "tag": "fakeip",
@@ -472,7 +472,7 @@
         "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "direct"
     },
     {
       "tag": "netflix",
@@ -624,14 +624,6 @@
     {
       "tag": "direct",
       "type": "direct"
-    },
-    {
-  "tag": "dns-direct",
-  "type": "selector",
-  "outbounds": [
-    "direct"
-  ],
-  "default": "direct"
     }
   ],
   "inbounds": [
