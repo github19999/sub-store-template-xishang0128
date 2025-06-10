@@ -131,7 +131,7 @@
         "all-auto",
         "direct"
       ],
-      "default": "all-auto"
+      "default": "all"
     },
     {
       "tag": "all",
