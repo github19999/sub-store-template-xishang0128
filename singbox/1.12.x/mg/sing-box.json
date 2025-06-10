@@ -11,7 +11,7 @@
         "tag": "ali",
         "type": "https",
         "server": "223.5.5.5",
-        "detour": "direct"
+        "detour": "null"
       },
       {
         "tag": "fakeip",
@@ -472,7 +472,7 @@
         "all",
         "all-auto"
       ],
-      "default": "direct"
+      "default": "proxy"
     },
     {
       "tag": "netflix",
