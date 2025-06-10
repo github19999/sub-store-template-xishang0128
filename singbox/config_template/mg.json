@@ -24,7 +24,7 @@
         "tag": "google",
         "type": "tls",
         "server": "8.8.8.8",
-        "detour": "Proxy"
+        "detour": "proxy"
       },
       {
         "tag": "local",
@@ -451,7 +451,7 @@
       "server": "local"
     },
     "auto_detect_interface": true,
-    "final": "Proxy",
+    "final": "proxy",
     "rules": [
       {
         "inbound": ["tun-in", "mixed-in"],
@@ -478,7 +478,7 @@
       {
         "rule_set": "geosite-category-ads-all",
         "clash_mode": "global",
-        "outbound": "Proxy"
+        "outbound": "proxy"
       },
       {
         "clash_mode": "direct",
@@ -486,7 +486,7 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "Proxy"
+        "outbound": "proxy"
       },
       {
         "domain": [
