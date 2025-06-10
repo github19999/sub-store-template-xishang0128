@@ -624,6 +624,14 @@
     {
       "tag": "direct",
       "type": "direct"
+    },
+    {
+  "tag": "dns-direct",
+  "type": "selector",
+  "outbounds": [
+    "direct"
+  ],
+  "default": "direct"
     }
   ],
   "inbounds": [
